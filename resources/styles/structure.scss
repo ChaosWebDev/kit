@@ -1,0 +1,23 @@
+@use 'modules/mixins' as *;
+@use 'modules/variables' as *;
+@use 'modules/elements' as *;
+@use 'classes/classes' as *;
+
+:root {
+
+    body,
+    *::before,
+    *::after {
+        @include reset;
+    }
+
+    body {
+        background: var(--cwd-body-background);
+        color: var(--cwd-body-color);
+
+        nav {
+            background: var(--cwd-nav-background);
+            color: var(--cwd-nav-color);
+        }
+    }
+}

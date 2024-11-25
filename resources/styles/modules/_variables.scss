@@ -1,0 +1,15 @@
+:root {
+    --cwd-body-background: #e9e5e5;
+    --cwd-body-color: #000;
+
+    --cwd-nav-background: #bfbebe;
+    --cwd-nav-color: #000;
+}
+
+[data-theme="dark"] {
+    --cwd-body-background: #060636;
+    --cwd-body-color: #e9e5e5;
+
+    --cwd-nav-background: #101094;
+    --cwd-nav-color: #e9e5e5;
+}
