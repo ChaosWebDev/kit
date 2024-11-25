@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "cwd/laravel-kit",
+    "name": "chaoswebdev/laravel-kit",
     "type": "project",
     "description": "CWD's starterkit for the Laravel Framework.",
     "keywords": [
