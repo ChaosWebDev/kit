@@ -1,53 +1,56 @@
 <x-app-layout title="Login">
     <main id="{{ $main }}">
 
-        <form class="max-w-sm mx-auto mt-8" action="/login" method="POST">
-            @csrf
-            {{-- Username --}}
-            <div class="mb-5">
-                <label for="username" class="block mb-2 text-sm font-medium">Username</label>
-                <input type="username" id="username" name='username'
-                    class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-            </div>
+        <header>
+            <h1>Please log in</h1>
+        </header>
 
-            {{-- Password --}}
-            <div class="mb-5">
-                <label for="password" class="block mb-2 text-sm font-medium mr-2">Password</label>
-                <div class="mb-5 flex items-center">
-                    <input type="password" id="password" name='password'
-                        class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2">
-                    <input type="text" id="password_text" name='password'
-                        class="hidden border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2">
+        <section class="content">
+
+            <form action="/login" method="POST">
+                @csrf
+                {{-- Username --}}
+                <input type="username" id="username" name='username' placeholder="Enter your username" autofocus
+                    autocomplete='username'>
+
+                {{-- Password --}}
+                <div class="row">
+                    <input type="password" id="password" name='password' placeholder='Enter your password'>
+                    <input type="text" id="password_text" name='password' class="hidden"
+                        placeholder='Enter your password'>
                     <i class="nf nf-fa-eye clickable"></i>
                 </div>
-            </div>
 
-            {{-- Remember Me --}}
-            <div class="flex items-start mb-5">
-                <div class="flex items-center h-5">
-                    <input id="remember_me" type="checkbox" value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                        name="remember_me" />
+                {{-- Remember Me --}}
+                <div class="row">
+                    <input id="remember_me" type="checkbox" name="remember_me" />
+                    <label for="remember_me">Remember me</label>
                 </div>
-                <label for="remember_me" class="ms-2 text-sm font-medium">Remember me</label>
-            </div>
 
-            {{-- Submit --}}
-            <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                {{-- Submit --}}
+                <div class="buttons">
+                    <input type="submit" value="Login">
+                    <span class="row">
+                        or <a href="{{ route('register') }}">Register</a>
+                    </span>
+                </div>
 
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    <div class="text-red-500 text-sm mt-1">{{ $error }}</div>
-                @endforeach
-            @endif
-        </form>
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="text-red-500 text-sm mt-1">{{ $error }}</div>
+                    @endforeach
+                @endif
+            </form>
+
+        </section>
     </main>
 
     @push('scripts')
         <script type='module'>
             $(() => {
                 $("i.nf.nf-fa-eye").on('click', function(e) {
+                    $(this).toggleClass('active');
+
                     if ($("#password").hasClass("hidden")) {
                         $("#password").val($("#password_text").val());
                     } else {

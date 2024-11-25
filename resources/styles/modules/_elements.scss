@@ -2,6 +2,12 @@ a {
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    padding: 5px;
+
+    &:hover {
+        background: var(--cwd-nav-hover-background);
+        color: var(--cwd-nav-hover-color);
+    }
 }
 
 z {
