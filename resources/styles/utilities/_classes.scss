@@ -1,4 +1,7 @@
-.flex {
+// ! FLEX ! //
+// * Directions * //
+.row,
+.column {
     display: flex;
 }
 
@@ -6,7 +9,7 @@
     flex-direction: column;
 }
 
-// Align Items
+// * Alignments * //
 .align-center {
     align-items: center;
 }
@@ -19,9 +22,17 @@
     align-items: flex-end;
 }
 
-// Justify Content
+// * Justifications * //
 .justify-center {
     justify-content: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
 }
 
 .justify-between {
@@ -36,10 +47,11 @@
     justify-content: space-evenly;
 }
 
-.justify-start {
-    justify-content: flex-start;
+// ! TEXT ! //
+.hidden {
+    display: none !important;
 }
 
-.justify-end {
-    justify-content: flex-end;
+.fv-sc {
+    font-variant: small-caps;
 }

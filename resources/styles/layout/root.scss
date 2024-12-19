@@ -1,0 +1,18 @@
+@import "./body";
+@import "./main";
+@import "./menu";
+@import "./footer";
+
+:root {
+
+    body,
+    *::before,
+    *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    font-size: var(--font-size, 18px);
+    font-family: var(--font-family-default, Poppins, sans-serif);
+}

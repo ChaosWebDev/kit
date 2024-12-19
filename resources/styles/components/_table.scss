@@ -1,0 +1,45 @@
+table,
+tr,
+th,
+td {
+    @include reset;
+    border: 1px solid var(--border-color);
+    border-collapse: collapse;
+}
+
+table {
+    width: 90%;
+
+    tr {
+        &.clickable {
+            cursor: pointer;
+
+            &:hover {
+                background: var(--nav-hover-background);
+                color: var(--nav-hover-color);
+            }
+        }
+
+        th,
+        td {
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        td {
+
+            .row {
+                @extend .align-center;
+                gap: 0.25rem;
+
+                .title::after {
+                    content: ":";
+                }
+            }
+
+            &.notes {
+                max-width: 200px !important;
+            }
+        }
+    }
+}

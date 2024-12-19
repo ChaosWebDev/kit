@@ -1,3 +1,4 @@
-// USE CASES
-@use 'structure' as *;
-@use 'blades/blades';
+@import "./utilities/utilities.scss";
+@import "./layout/root.scss";
+@import "./components/components.scss";
+@import "./templates/templates.scss";

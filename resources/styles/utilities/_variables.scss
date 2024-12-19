@@ -1,0 +1,50 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu|Lora|Abril+Fatface|Poppins";
+
+:root {
+    // ! FONT ! //
+    --font-size: 20px;
+    --font-family-default: Lora, serif;
+    --font-family-header: Ubuntu, sans-serif;
+
+
+    // ! COLORS ! //
+    // * GENERIC * //
+    --alert: red;
+    --important: goldenrod;
+    --good: forestgreen;
+
+    // * ADVANCED * //
+    --body-background: #FFF;
+    --body-color: #000;
+
+    --nav-background: #c0c0c0;
+    --nav-color: #000;
+    --nav-hover-background: #808080;
+    --nav-hover-color: #FFF;
+
+    --footer-background: var(--nav-background);
+    --footer-color: var(--nav-color);
+
+    // * CARDS * //
+    --card-background: tan;
+    --card-color: black;
+
+    // * BORDERS * //
+    --border-color: var(--body-color);
+}
+
+:root[data-theme="dark"] {
+    // ! COLORS ! //
+    --body-background: #1e0046;
+    --body-color: #FFF;
+
+    --footer-background: var(--nav-background);
+    --footer-color: var(--nav-color);
+
+    // * CARDS * //
+    --card-background: #2d0c75;
+    --card-color: #0FF;
+
+    // * BORDERS * //
+    --border-color: var(--body-color);
+}

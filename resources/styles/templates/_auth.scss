@@ -1,0 +1,21 @@
+main#login {
+    form {
+        @extend .column, .align-start;
+        row-gap: 0.25rem;
+
+        label,
+        .buttons {
+            margin-top: 0.75rem;
+        }
+
+        .buttons {
+            @extend .row, .justify-evenly;
+        }
+
+        >*,
+        button,
+        input[type=submit] {
+            font-size: 1rem;
+        }
+    }
+}
