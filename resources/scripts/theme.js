@@ -1,9 +1,22 @@
-$(() => {
-    const themeToggle = $("#theme-toggle");
+$(document).ready(function () {
+    $('#theme-toggle').on('click', function () {
+        let currentTheme = $('html').attr('data-theme');
+        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    themeToggle.on('click', function (e) {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
+        $.ajax({
+            url: '/ajax/theme',
+            type: 'POST',
+            data: { theme: newTheme },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Add CSRF token
+            },
+            success: function (response) {
+                $('html').attr('data-theme', newTheme);
+                console.log(response.message);
+            },
+            error: function (xhr) {
+                console.error('Error:', xhr.responseJSON);
+            }
+        });
     });
 });
